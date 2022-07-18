@@ -12,7 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Route[] = [
-  {path: '', component: HomeComponent},
+  {path: '', redirectTo: 'followers', pathMatch: 'full'},
   {path: 'posts', component: PostsComponent},
   {path: 'profile/:username', component: ProfileComponent},
   {path: 'followers', component: FollowersComponent},
