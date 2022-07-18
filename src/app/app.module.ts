@@ -9,16 +9,18 @@ import { HomeComponent } from './home/home.component';
 import { Route, RouterModule } from '@angular/router';
 import { FollowersComponent } from './followers/followers.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Route[] = [
   {path: '', component: HomeComponent},
   {path: 'posts', component: PostsComponent},
   {path: 'profile/:username', component: ProfileComponent},
-  {path: 'followers', component: FollowersComponent}
+  {path: 'followers', component: FollowersComponent},
+  {path: '**', component: NotFoundComponent }
 ]
 @NgModule({
   imports:      [ BrowserModule, RouterModule.forRoot(routes) ],
-  declarations: [ AppComponent, PostsComponent, NavbarComponent, HomeComponent, FollowersComponent, ProfileComponent ],
+  declarations: [ AppComponent, PostsComponent, NavbarComponent, HomeComponent, FollowersComponent, ProfileComponent, NotFoundComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
