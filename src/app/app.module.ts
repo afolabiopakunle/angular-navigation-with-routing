@@ -10,6 +10,7 @@ import { Route, RouterModule } from '@angular/router';
 import { FollowersComponent } from './followers/followers.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { GithubFollowersService } from './shared/followers.service';
 
 const routes: Route[] = [
   {path: '', redirectTo: 'followers', pathMatch: 'full'},
@@ -21,6 +22,7 @@ const routes: Route[] = [
 @NgModule({
   imports:      [ BrowserModule, RouterModule.forRoot(routes) ],
   declarations: [ AppComponent, PostsComponent, NavbarComponent, HomeComponent, FollowersComponent, ProfileComponent, NotFoundComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [GithubFollowersService]
 })
 export class AppModule { }
