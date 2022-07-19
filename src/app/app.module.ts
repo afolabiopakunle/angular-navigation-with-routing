@@ -16,8 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 const routes: Route[] = [
   {path: '', redirectTo: 'followers', pathMatch: 'full'},
   {path: 'posts', component: PostsComponent},
-  {path: 'profile/:username', component: ProfileComponent},
-  {path: 'followers', component: FollowersComponent},
+  {path: 'follower/:id/:username', component: ProfileComponent },
+  {path: 'followers', component: FollowersComponent },
   {path: '**', component: NotFoundComponent }
 ]
 @NgModule({

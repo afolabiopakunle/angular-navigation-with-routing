@@ -10,7 +10,16 @@ export class FollowersComponent implements OnInit {
 
   constructor(private followersService: GithubFollowersService) { }
 
+  followers = [];
   ngOnInit() {
+    this.fetchFollowers();
+  }
+
+  fetchFollowers() {
+    this.followersService.getFollowers()
+    .subscribe((response: any) => {
+      this.followers = response;
+    })
   }
 
 }
